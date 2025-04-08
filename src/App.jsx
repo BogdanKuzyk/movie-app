@@ -5,7 +5,6 @@ function App() {
     <main>
       <div className="pattern"></div>
       <div className="wrapper">
-        J
         <header>
           <h1>
             Find <span className="text-gradient">Movies</span> You'll Enjoy
