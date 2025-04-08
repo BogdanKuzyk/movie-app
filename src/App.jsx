@@ -5,10 +5,13 @@ function App() {
     <main>
       <div className="pattern"></div>
       <div className="wrapper">
-        <h1>
-          Find <span className="text-gradient">Movies</span> You'll Enjoy
-          wihtout the Hassle
-        </h1>
+        J
+        <header>
+          <h1>
+            Find <span className="text-gradient">Movies</span> You'll Enjoy
+            wihtout the Hassle
+          </h1>
+        </header>
       </div>
     </main>
   );
