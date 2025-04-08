@@ -15,7 +15,6 @@ function Search({ searchTerm, setSearchTerm }) {
           type="text"
           placeholder="Search through thousands of movies"
           value={searchTerm}
-          K
           onChange={onSearch}
         />
       </div>
