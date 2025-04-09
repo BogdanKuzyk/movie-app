@@ -25,14 +25,16 @@ function App() {
   //Lifecycle
 
   useEffect(() => {
-    fetchMovies();
-  }, []);
+    fetchMovies(searchTerm);
+  }, [searchTerm]);
 
-  async function fetchMovies() {
+  async function fetchMovies(query = "") {
     setLoading(true);
     setErrorMessage("");
     try {
-      const endpoint = `${API_BASE_URL}/discover/movie?sort_by=popularity.desc`;
+      const endpoint = query
+        ? `${API_BASE_URL}/search/movie?query=${encodeURIComponent(query)}`
+        : `${API_BASE_URL}/discover/movie?sort_by=popularity.desc`;
 
       const response = await fetch(endpoint, API_OPTIONS);
 
@@ -67,8 +69,8 @@ function App() {
             Find <span className="text-gradient">Movies</span> You'll Enjoy
             wihtout the Hassle
           </h1>
-          <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </header>
+        <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         <section className="all-movies">
           <h2 className="mt-[40px]">All Movies</h2>
           {loading ? (
