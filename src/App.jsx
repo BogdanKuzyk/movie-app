@@ -27,11 +27,11 @@ function App() {
   useDebounce(() => setDebouncedSearchTerm(searchTerm), 500, [searchTerm]);
 
   //Lifecycle
-
   useEffect(() => {
     fetchMovies(debouncedSearchTerm);
   }, [debouncedSearchTerm]);
 
+  //Methods
   async function fetchMovies(query = "") {
     setLoading(true);
     setErrorMessage("");
